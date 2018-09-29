@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="images/favicon.ico">
+  <title>Componentes Siete</title>
+  
+  <!-- Bootstrap core CSS -->
+  <!--<link href="//netdna.bootstrapcdn.com/bootstrap/2.1.0/css/bootstrap.min.css" rel="stylesheet">-->
+  <!--<link href="//netdna.bootstrapcdn.com/bootstrap/2.1.0/css/bootstrap-thenme.min.css" rel="stylesheet">-->
+  
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/literatura.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="js/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Carga la librería jquery antes de invocar a la función ready-->
+  <script src="js/jquery-1.11.2.min.js"></script>
+
+  <!-- Custom styles and javascript for this template -->
+  <script src="js/literatura.js"></script>
+ 
+  <style type="text/css"></style>
+
+  <!-- La función ready que se ejecuta en esta página-->
+  <script languaje="Javascript" type="text/Javascript">
+    
+
+    $(function(){
+
+      var jes = $("#jes"); var ann = $("#ann"); var hil = $("#hil");
+      var cha = $("#cha"); var swa = $("#swa"); var pal = $("#pal");
+      var men = $("#men"); var kni = $("#kni"); var por = $("#por");
+      var cha2 = $("#cha2"); var swa2 = $("#swa2"); var pal2 = $("#pal2");
+      var men2 = $("#men2"); var kni2 = $("#kni2"); var por2 = $("#por2");
+      var im7A = new Array(3); var im7B = new Array(6); var im8 = new Array(6);
+
+      im7A[0] = $("#im71"); im7A[1] = $("#im72"); im7A[2] = $("#im73");
+
+      im7B[0] = $("#im74"); im7B[1] = $("#im75"); im7B[2] = $("#im76");
+      im7B[3] = $("#im77"); im7B[4] = $("#im78"); im7B[5] = $("#im79");
+
+      im8[0] = $("#im80"); im8[1] = $("#im81"); im8[2] = $("#im82");
+      im8[3] = $("#im83"); im8[4] = $("#im84"); im8[5] = $("#im85");
+
+      var A = 0; var B = 0; var C = 0;
+
+      jes.on("click", function(){
+        im7A[A].css("opacity", "0");
+        im7A[0].css("opacity", "1");
+        A = 0;
+      });
+
+       ann.on("click", function(){
+        im7A[A].css("opacity", "0");
+        im7A[1].css("opacity", "1");
+        A = 1;
+      });
+
+        hil.on("click", function(){
+        im7A[A].css("opacity", "0");
+        im7A[2].css("opacity", "1");
+        A = 2;
+      });
+
+        cha.on("click", function(){
+        im7B[B].css("opacity", "0");
+        im7B[0].css("opacity", "1");
+        B = 0;
+      });
+
+        swa.on("click", function(){
+        im7B[B].css("opacity", "0");
+        im7B[1].css("opacity", "1");
+        B = 1;
+      });
+
+        pal.on("click", function(){
+        im7B[B].css("opacity", "0");
+        im7B[2].css("opacity", "1");
+        B = 2;
+      });
+
+        men.on("click", function(){
+        im7B[B].css("opacity", "0");
+        im7B[3].css("opacity", "1");
+        B = 3;
+      });
+
+        kni.on("click", function(){
+        im7B[B].css("opacity", "0");
+        im7B[4].css("opacity", "1");
+        B = 4;
+      });
+
+        por.on("click", function(){
+        im7B[B].css("opacity", "0");
+        im7B[5].css("opacity", "1");
+        B = 5;
+      });
+
+        cha2.on("click", function(){
+        im8[C].css("opacity", "0");
+        im8[0].css("opacity", "1");
+        C = 0;
+      });
+
+        swa2.on("click", function(){
+        im8[C].css("opacity", "0");
+        im8[1].css("opacity", "1");
+        C = 1;
+      });
+
+        pal2.on("click", function(){
+        im8[C].css("opacity", "0");
+        im8[2].css("opacity", "1");
+        C = 2;
+      });
+
+        men2.on("click", function(){
+        im8[C].css("opacity", "0");
+        im8[3].css("opacity", "1");
+        C = 3;
+      });
+
+        kni2.on("click", function(){
+        im8[C].css("opacity", "0");
+        im8[4].css("opacity", "1");
+        C = 4;
+      });
+
+        por2.on("click", function(){
+        im8[C].css("opacity", "0");
+        im8[5].css("opacity", "1");
+        C = 5;
+      });
+
+
+    });
+
+
+  </script>
+
+</head>
+
+<body>
+  <div class="con container">
+
+    <div class="page-header">
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('index.html')">Inicio</button>
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('rejilla.html')">Rejilla</button>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown">Tipografía
+           <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="tipografia.html">Tipografía</a></li>
+            <li><a href="tipografia_2.html">Tipografía Dos</a></li>
+            <li><a href="tipografia_3.html">Tipografía Tres</a></li>
+            <li><a href="tipografia_4.html">Tipografía Cuatro</a></li>
+            <li><a href="tipografia_5.html">Tipografía Cinco</a></li>
+            <li><a href="tipografia_6.html">Tipografía Seis</a></li>
+          </ul>
+        </div>
+
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('imagenes.html')">Imágenes</button>
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('utilidades.html')">Utilidades</button>
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('botones.html')">Botones</button>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown">Formularios
+           <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="formularios.html">Formularios Uno</a></li>
+            <li><a href="formularios_2.html">Formularios Dos</a></li>
+            <li><a href="formularios_3.html">Formularios Tres</a></li>
+            <li><a href="formularios_4.html">Formularios Cuatro</a></li>
+          </ul>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-lg btn-default dropdown-toggle active" data-toggle="dropdown">Componentes
+           <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="componentes.html">Componentes Uno</a></li>
+            <li><a href="componentes_2.html">Componentes Dos</a></li>
+            <li><a href="componentes_3.html">Componentes Tres</a></li>
+            <li><a href="componentes_4.html">Componentes Cuatro</a></li>
+            <li><a href="componentes_5.html">Componentes Cinco</a></li>
+            <li><a href="componentes_6.html">Componentes Seis</a></li>
+            <li class="active"><a href="componentes_7.html">Componentes Siete</a></li>
+            <li><a href="componentes_8.html">Componentes Ocho</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <h1>Vamos a ver que escribimos hoy</h1>
+      <p class="lead">Voy a jugar un poco con la rejilla</p>
+    </div>
+
+    <h1>Componentes 7</h1>
+
+    
+
+    <h2>Objetos Multimedia</h2>
+
+    <div class="row">
+      <div class="col-lg-8"> 
+
+        <div class="media">
+          <a id="jes" class="pull-left">
+            <img class="media-object" src="images/jessica-chastain_2.jpg" height="64" width="64">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Jessica Chastain</h4>
+              Jessica Chastain es una actriz y productora de cine nacida en Sacramento, California. Su primera película fué Jolene. En el año 2012, obtuvo un Globo de Oro por su interpretación en la película Zero Dark Thirty.
+          </div>
+        </div>
+
+        <div class="media">
+          <a id="ann" class="pull-left">
+            <img class="media-object" src="images/anna-dzyuba_2.jpg" height="64" width="64">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Anna Dzyuba</h4>
+              Esta cantante ucraniana, conocida como Asti, nació en la ciudad de Cherkasy el 24 de junio de 1990. Forma dúo con el famoso cantate ucraniano Artem Igorevich. Ellos son Artik & Asti y cantan en ruso.
+          </div>
+        </div>
+
+        <div class="media">
+          <a id="hil" class="pull-left">
+            <img class="media-object" src="images/hilary-swank_2.jpg" height="64" width="64">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Hilary Swank</h4>
+              Esta actriz estadounidense ha ganado dos premios Óscar por sus interpretaciones en Boys D'ont Cry y Millon Dolar Baby.
+          </div>
+        </div>
+        <br>
+        <code>&#60;div class="media"&#62;&#60;a class="pull-left"&#62;&#60;img class="media-object" src=""&#62;&#60;/a&#62;&#60;div class="media-body"&#62;&#60;h4 class="media-heading"&#62;----&#60;/div&#62;&#60;/div&#62;
+
+        </code>
+
+      </div>
+      <div class="col-lg-4">
+        <div class="con4">
+          <div id="im71"></div>
+          <div id="im72"></div>
+          <div id="im73"></div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <h2>Listas de elementos</h2>
+
+    <ul class="list-group">
+      <li class="list-group-item">Jessica Chastain</li>
+      <li class="list-group-item">Hilary Swank</li>
+      <li class="list-group-item">Teresa Palmer</li>
+      <li class="list-group-item">Eva Mendes</li>
+      <li class="list-group-item">Keyra Knigthley</li>
+      <li class="list-group-item">Natalie Portman</li>
+    </ul>
+
+    <code>
+      &#60;ul class="list-group"&#62;&#60;li class="list-group-item"&#62;Jessica Chastain&#60;/li&#62;...&#60;/ul&#62;
+    </code>
+
+    <h2>Listas de elementos con badges</h2>
+
+    <ul class="list-group">
+      <li class="list-group-item"><span class="badge">3</span>Jessica Chastain</li>
+      <li class="list-group-item"><span class="badge">5</span>Hilary Swank</li>
+      <li class="list-group-item"><span class="badge">1</span>Teresa Palmer</li>
+      <li class="list-group-item"><span class="badge">0</span>Eva Mendes</li>
+      <li class="list-group-item"><span class="badge">4</span>Keyra Knigthley</li>
+      <li class="list-group-item"><span class="badge">5</span>Natalie Portman</li>
+    </ul>
+    
+    <code>
+      &#60;ul class="list-group"&#62;&#60;li class="list-group-item"&#62;&#60;span class="badge"&#62;3&#60;/span&#62;Jessica Chastain&#60;/li&#62;...&#60;/ul&#62;
+    </code>
+
+    <h2>Listas de elementos con enlaces</h2>
+
+    <div class="row">
+      <div class="list-group col-lg-6 col-lg-offset-1">
+        <a id="cha" class="list-group-item active">Jessica Chastain</a>
+        <a id="swa" class="list-group-item">Hilary Swank</a>
+        <a id="pal" class="list-group-item">Teresa Palmer</a>
+        <a id="men" class="list-group-item">Eva Mendes</a>
+        <a id="kni" class="list-group-item">Keira Knigthley</a>
+        <a id="por" class="list-group-item">Natalie Portman</a>
+        <br>
+        <code>
+      &#60;div class="list-group"&#62;&#60;a class="list-group-item"&#62;Jessica Chastain&#60;/a&#62;...&#60;/div&#62;
+        </code>
+      </div>
+      <div class="col-lg-4 col-lg-offset-1">
+        <div class="con4">
+          <div id="im74"></div>
+          <div id="im75"></div>
+          <div id="im76"></div>
+          <div id="im77"></div>
+          <div id="im78"></div>
+          <div id="im79"></div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Listas de elementos complejos</h2>
+
+    <div class="row">
+      <div class="list-group col-lg-6 col-lg-offset-1">
+        <a id="cha2" class="list-group-item active">
+          <h4 class="list-group-item-heading">Jessica Chastain</h4>
+          <p class="list-group-item-text">Actriz nacida en Sacramento nominada ds veces a los premios Óscar</p>
+        </a>
+        <a id="swa2" class="list-group-item">
+          <h4 class="list-group-item-heading">Hilary Swank</h4>
+          <p class="list-group-item-text">Esta actriz californiana ha ganado dos premios Óscar</p>
+        </a>
+        <a id="pal2" class="list-group-item">
+        <h4 class="list-group-item-heading">Teresa Palmer</h4>
+          <p class="list-group-item-text">Esta actriz australiana está casada con el piloto de F1 Mark Webber</p></a>
+        <a id="men2" class="list-group-item">
+        <h4 class="list-group-item-heading">Eva Mendes</h4>
+          <p class="list-group-item-text">Actriz de origen cubano nacida en Miami</p></a>
+        <a id="kni2" class="list-group-item">
+        <h4 class="list-group-item-heading">Keira Knigthley</h4>
+          <p class="list-group-item-text">Actriz inglesa que debutó en Star Wars Episodio 1: La amenaza fantasma</p></a>
+        <a id="por2" class="list-group-item">
+        <h4 class="list-group-item-heading">Natalie Portman</h4>
+          <p class="list-group-item-text">Nacida en Jerusalén ganó un Óscar por su interpretación en Black Swan</p></a>
+      </div>
+      <div class="col-lg-4 col-lg-offset-1">
+        <div class="con4">
+          <div id="im80"></div>
+          <div id="im81"></div>
+          <div id="im82"></div>
+          <div id="im83"></div>
+          <div id="im84"></div>
+          <div id="im85"></div>
+        </div>
+      </div>
+    </div>
+    <code>
+      &#60;div class="list-group"&#62;&#60;a class="list-group-item"&#62;&#60;h4 class="list-group-item-heading"&#62;Jessica Chastain&#60;/h4&#62;&#60;p&#62;....&#60;/p&#62;&#60;/a&#62;...&#60;/div&#62;
+    </code>
+
+   
+
+   
+    
+
+    
+    <br><br><br><br> <br><br><br><br> <br><br><br><br>
+
+
+
+
+
+
+
+    
+
+   
+
+
+
+
+
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  
+  <script src="js/bootstrap.js"></script>
+  <script src="js/docs.min.js"></script>
+    
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="images/favicon.ico">
+  <title>Componentes Cinco</title>
+  
+  <!-- Bootstrap core CSS -->
+  <!--<link href="//netdna.bootstrapcdn.com/bootstrap/2.1.0/css/bootstrap.min.css" rel="stylesheet">-->
+  <!--<link href="//netdna.bootstrapcdn.com/bootstrap/2.1.0/css/bootstrap-thenme.min.css" rel="stylesheet">-->
+  
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/literatura.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="js/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Carga la librería jquery antes de invocar a la función ready-->
+  <script src="js/jquery-1.11.2.min.js"></script>
+
+  <!-- Custom styles and javascript for this template -->
+  <script src="js/literatura.js"></script>
+ 
+  <style type="text/css"></style>
+
+  <!-- La función ready que se ejecuta en esta página-->
+  <script languaje="Javascript" type="text/Javascript">
+    
+    $(function(){
+
+      var anne = $("#anne"); var india = $("#india"); var laura = $("#laura"); var rita = $("#rita");
+      var shym = $("#shym"); var rihanna = $("#rihanna");
+
+      var anne2 = $("#anne-2"); var india2 = $("#india-2"); var laura2 = $("#laura-2"); var rita2 = $("#rita-2");
+      var shym2 = $("#shym-2"); var rihanna2 = $("#rihanna-2");
+
+      var gimg = new Array(6);
+      var gimg2 = new Array(6);
+
+      var N = 0;
+      var N2 = 0;
+
+      gimg[0] = $("#g-img1"); gimg[1] = $("#g-img2"); gimg[2] = $("#g-img3"); gimg[3] = $("#g-img4");
+      gimg[4] = $("#g-img5"); gimg[5] = $("#g-img6");
+
+      gimg2[0] = $("#g-img7"); gimg2[1] = $("#g-img8"); gimg2[2] = $("#g-img9"); gimg2[3] = $("#g-img10");
+      gimg2[4] = $("#g-img11"); gimg2[5] = $("#g-img12");
+
+      anne.on("click", function(){
+        gimg[N].css("opacity","0");
+        gimg[0].css("opacity","1");
+        N = 0;
+      });
+
+      india.on("click", function(){
+        gimg[N].css("opacity","0");
+        gimg[1].css("opacity","1");
+        N = 1;
+      });
+
+      laura.on("click", function(){
+        gimg[N].css("opacity","0");
+        gimg[2].css("opacity","1");
+        N = 2;
+      });
+
+      rita.on("click", function(){
+        gimg[N].css("opacity","0");
+        gimg[3].css("opacity","1");
+        N = 3;
+      });
+
+      shym.on("click", function(){
+        gimg[N].css("opacity","0");
+        gimg[4].css("opacity","1");
+        N = 4;
+      });
+
+      rihanna.on("click", function(){
+        gimg[N].css("opacity","0");
+        gimg[5].css("opacity","1");
+        N = 5;
+      });
+
+
+
+      anne2.on("click", function(){
+        gimg2[N2].css("opacity","0");
+        gimg2[0].css("opacity","1");
+        N2 = 0;
+      });
+
+      india2.on("click", function(){
+        gimg2[N2].css("opacity","0");
+        gimg2[1].css("opacity","1");
+        N2 = 1;
+      });
+
+      laura2.on("click", function(){
+        gimg2[N2].css("opacity","0");
+        gimg2[2].css("opacity","1");
+        N2 = 2;
+      });
+
+      rita2.on("click", function(){
+        gimg2[N2].css("opacity","0");
+        gimg2[3].css("opacity","1");
+        N2 = 3;
+      });
+
+      shym2.on("click", function(){
+        gimg2[N2].css("opacity","0");
+        gimg2[4].css("opacity","1");
+        N2 = 4;
+      });
+
+      rihanna2.on("click", function(){
+        gimg2[N2].css("opacity","0");
+        gimg2[5].css("opacity","1");
+        N2 = 5;
+      });
+
+
+
+    });
+
+
+  </script>
+
+</head>
+
+<body>
+  <div class="con container">
+
+    <div class="page-header">
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('index.html')">Inicio</button>
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('rejilla.html')">Rejilla</button>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown">Tipografía
+           <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="tipografia.html">Tipografía</a></li>
+            <li><a href="tipografia_2.html">Tipografía Dos</a></li>
+            <li><a href="tipografia_3.html">Tipografía Tres</a></li>
+            <li><a href="tipografia_4.html">Tipografía Cuatro</a></li>
+            <li><a href="tipografia_5.html">Tipografía Cinco</a></li>
+            <li><a href="tipografia_6.html">Tipografía Seis</a></li>
+          </ul>
+        </div>
+
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('imagenes.html')">Imágenes</button>
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('utilidades.html')">Utilidades</button>
+        <button type="button" class="btn btn-lg btn-default" onclick="abre('botones.html')">Botones</button>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown">Formularios
+           <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="formularios.html">Formularios Uno</a></li>
+            <li><a href="formularios_2.html">Formularios Dos</a></li>
+            <li><a href="formularios_3.html">Formularios Tres</a></li>
+            <li><a href="formularios_4.html">Formularios Cuatro</a></li>
+          </ul>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-lg btn-default dropdown-toggle active" data-toggle="dropdown">Componentes
+           <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="componentes.html">Componentes Uno</a></li>
+            <li><a href="componentes_2.html">Componentes Dos</a></li>
+            <li><a href="componentes_3.html">Componentes Tres</a></li>
+            <li><a href="componentes_4.html">Componentes Cuatro</a></li>
+            <li class="active"><a href="componentes_5.html">Componentes Cinco</a></li>
+            <li><a href="componentes_6.html">Componentes Seis</a></li>
+            <li><a href="componentes_7.html">Componentes Siete</a></li>
+            <li><a href="componentes_8.html">Componentes Ocho</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <h1>Vamos a ver que escribimos hoy</h1>
+      <p class="lead">Voy a jugar un poco con la rejilla</p>
+    </div>
+
+    <h1>Componentes 5</h1>
+
+    <h2>Galerías de imágenes</h2>
+
+    <div class="row">
+      <div class="col-lg-2">
+        <a id="anne" class="thumbnail">
+          <img src="images/anne-marie_1.jpg" width="130" height="100">
+        </a>
+      </div>
+      <div class="col-lg-2">
+        <a id="india" class="thumbnail">
+          <img src="images/india_1.jpg" width="130" height="100">
+        </a>
+      </div>
+      <div class="col-lg-2">
+        <a id="laura" class="thumbnail">
+          <img src="images/laura-pausini_1.jpg" width="130" height="100">
+        </a>
+      </div>
+      <div class="col-lg-2">
+        <a id="rita" class="thumbnail">
+          <img src="images/RitaOra_1.jpg" width="130" height="100">
+        </a>
+      </div>
+      <div class="col-lg-2">
+        <a id="shym" class="thumbnail">
+          <img src="images/Shym_1.jpg" width="130" height="100">
+        </a>
+      </div>
+      <div class="col-lg-2">
+        <a id="rihanna" class="thumbnail">
+          <img src="images/rihanna_1.jpg" width="130" height="100">
+        </a>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <code>&#60;a class="thumbnail"&#62;&#60;img src="..."&#62;&#60;/a&#62;</code>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="con3">
+      
+      <div id="g-img1"></div>
+      <div id="g-img2"></div>
+      <div id="g-img3"></div>
+      <div id="g-img4"></div>
+      <div id="g-img5"></div>
+      <div id="g-img6"></div>
+    
+    </div>
+
+    <br><br><br><br>
+
+    <div class="row">
+      <div class="col-lg-2">
+        <div class="thumbnail">
+          <img src="images/anne-marie_1.jpg" width="130" height="100">
+          <div class="caption">
+            <h4>Anne-Marie</h4>
+            <button id="anne-2" type="button" class="btn btn-success">Ampliar imagen</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="thumbnail">
+          <img src="images/india_1.jpg" width="130" height="100">
+          <div class="caption">
+            <h4>India Martínez</h4>
+            <button id="india-2" type="button" class="btn btn-success">Ampliar imagen</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="thumbnail">
+          <img src="images/laura-pausini_1.jpg" width="130" height="100">
+          <div class="caption">
+            <h4>Laura Pausini</h4>
+            <button id="laura-2" type="button" class="btn btn-success">Ampliar imagen</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="thumbnail">
+          <img src="images/RitaOra_1.jpg" width="130" height="100">
+          <div class="caption">
+            <h4>Rita Ora</h4>
+            <button id="rita-2" type="button" class="btn btn-success">Ampliar imagen</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="thumbnail">
+          <img src="images/Shym_1.jpg" width="130" height="100">
+          <div class="caption">
+            <h4>Shy'm</h4>
+            <button id="shym-2" type="button" class="btn btn-success">Ampliar imagen</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="thumbnail">
+          <img src="images/rihanna_1.jpg" width="130" height="100">
+          <div class="caption">
+            <h4>Rihanna</h4>
+            <button id="rihanna-2" type="button" class="btn btn-success">Ampliar imagen</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-lg-9">
+        <code>&#60;div class="thumbnail"&#62;&#60;img src="..."&#62;&#60;div class="caption"&#62;&#60;h3&#62;&#60;/h3&#62;&#60;button class="..."&#62;&#60;/button&#62;&#60;/div&#62;&#60;/div&#62;</code>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="con3">
+      
+      <div id="g-img7"></div>
+      <div id="g-img8"></div>
+      <div id="g-img9"></div>
+      <div id="g-img10"></div>
+      <div id="g-img11"></div>
+      <div id="g-img12"></div>
+    
+    </div>
+
+
+
+   
+
+
+   
+
+
+
+
+
+
+
+
+
+    <br><br>
+
+    
+    <br><br><br><br> <br><br><br><br> <br><br><br><br>
+
+
+
+
+
+
+
+    
+
+   
+
+
+
+
+
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  
+  <script src="js/bootstrap.js"></script>
+  <script src="js/docs.min.js"></script>
+    
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+
+</body>
+</html>

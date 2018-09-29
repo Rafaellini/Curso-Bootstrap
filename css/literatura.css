@@ -1,0 +1,292 @@
+/* ---------------------------------- */
+/* -- l i t e r a t u r a    c s s -- */
+/* ---------------------------------- */
+
+
+
+
+.page-header > h1 {
+	color: red;
+}
+
+.col1 {
+	background-color: #ffffee;
+}
+
+.col2 {
+	background-color: #ffeeff;
+}
+
+.col3 {
+	background-color: #eeffff;
+}
+
+.col4 {
+	background-color: #ffeeee;
+}
+
+.col5 {
+	background-color: #eeeeee;
+}
+
+.col6 {
+	background-color: #eeeedd;
+}
+
+.col7 {
+	background-color: #eeddee;
+}
+
+.col8 {
+	background-color: #ddeeee;
+}
+
+.col9 {
+	background-color: #dddddd;
+}
+
+.col10 {
+	background-color: #ffffdd;
+}
+
+.col11 {
+	background-color: #ffddff;
+}
+
+.col12 {
+	background-color: #ddffff;
+}
+
+.con {
+	border: 2px solid green;
+}
+
+.con2 {
+	border: 1px solid black;
+}
+
+.con3 {
+	border: 1px solid red;
+	margin: auto;
+	width: 600px;
+	height: 383px;
+}
+
+.con4 {
+	border: 0px solid purple;
+	margin: auto;
+	width: 300px;
+	height: 300px;
+}
+
+#pepe{
+	transition-property: visibility;
+	transition-duration: 1s;
+	transition-delay: ease;
+}
+
+.logo1, .logo2, .logo3, .logo4{
+	border: 0px solid red;
+	width: 100px;
+	height: 100px;
+	background-repeat: no-repeat;
+}
+
+.logo1 {
+	background-image: url(../images/alexa-davalos-2.jpg);
+}
+
+.logo2 {
+	background-image: url(../images/aishwarya_rai_2.jpg);
+}
+
+.logo3 {
+	background-image: url(../images/choprita_2.jpg);
+}
+
+.logo4 {
+	background-image: url(../images/katrina_2.jpg);
+}
+
+.b1{
+	border: 1px solid red;
+	width: 50%;
+}
+
+.b2 {
+	border: 1px solid purple;
+	width: 700px;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9 {
+	border: 1px solid purple;
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	border-radius: 7%;
+	transition-property: all;
+	transition-duration: 2s;
+	transition-timing-function: ease-out;
+}
+
+#img1{
+	background-image: url(../images/gris.jpg);
+}
+
+#img2{
+	background-image: url(../images/teresa-palmer.jpg);
+	opacity: 0;
+}
+
+#img3{
+	background-image: url(../images/eva-mendes.jpg);
+	opacity: 0;
+}
+
+#img4{
+	background-image: url(../images/Keira-Knightley.jpg);
+	opacity: 0;
+}
+
+#img5{
+	background-image: url(../images/natalie-portman.jpg);
+	opacity: 0;
+}
+
+#img6{
+	background-image: url(../images/Katie_McGrath.jpg);
+	opacity: 0;
+}
+
+#img7{
+	background-image: url(../images/jennifer-aniston.jpg);
+	opacity: 0;
+}
+
+#img8{
+	background-image: url(../images/gwyneth-paltrow.jpg);
+	opacity: 0;
+}
+
+#img9{
+	background-image: url(../images/juliaroberts.jpg);
+	opacity: 0;
+}
+
+#teresa > a, #mendes > a, #keira > a, #portman > a, .katie > a, .jennifer > a, .gwyneth > a, .julia > a, #cha, #swa, #pal, #men, #kni, #por, #cha2, #swa2, #pal2, #men2, #kni2, #por2  {
+	cursor: pointer;
+}
+
+#g-img1, #g-img7 {
+	background-image: url(../images/anne-marie_2.jpg);
+	opacity: 1;
+}
+
+#g-img2, #g-img8 {
+	background-image: url(../images/india_2.jpg);
+	opacity: 0;
+}
+
+#g-img3, #g-img9 {
+	background-image: url(../images/laura-pausini_2.jpg);
+	opacity: 0;
+}
+#g-img4, #g-img10 {
+	background-image: url(../images/RitaOra_2.jpg);
+	opacity: 0;
+}
+
+#g-img5, #g-img11 {
+	background-image: url(../images/Shym_2.jpg);
+	opacity: 0;
+}
+
+#g-img6, #g-img12 {
+	background-image: url(../images/rihanna_2.jpg);
+	opacity: 0;
+}
+
+
+
+#g-img1, #g-img2, #g-img3, #g-img4, #g-img5, #g-img6,
+#g-img7, #g-img8, #g-img9, #g-img10, #g-img11, #g-img12
+ {
+	border: 1px solid violet;
+	position: absolute;
+	width: 600px;
+	height: 383px;
+	margin: auto;
+
+	transition-property: all;
+	transition-duration: 2s;
+	transition-timing-function: ease-out;
+}
+
+.media > a {
+	cursor: pointer;
+}
+
+
+
+#im71, #im72, #im73, #im74, #im75, #im76, #im77, #im78, #im79,
+#im80, #im81, #im82, #im83, #im84, #im85 {
+	border: 1px solid purple;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	border-radius: 7%;
+	transition-property: all;
+	transition-duration: 2s;
+	transition-timing-function: ease-out;
+}
+
+
+#im71 {
+	background-image: url(../images/jessica-chastain.jpg);
+	opacity: 1;
+}
+
+#im72 {
+	background-image: url(../images/anna-dzyuba.jpg);
+	opacity: 0;
+}
+
+#im73 {
+	background-image: url(../images/hilary-swank.jpg);
+	opacity: 0;
+}
+
+#im74, #im80 {
+	background-image: url(../images/jessica-chastain.jpg);
+	opacity: 1;
+}
+
+#im75, #im81 {
+	background-image: url(../images/hilary-swank.jpg);
+	opacity: 0;
+}
+
+#im76, #im82 {
+	background-image: url(../images/teresa-palmer_2.jpg);
+	opacity: 0;
+}
+
+#im77, #im83 {
+	background-image: url(../images/eva-mendes_2.jpg);
+	opacity: 0;
+}
+
+#im78, #im84 {
+	background-image: url(../images/keira-knightley_2.jpg);
+	opacity: 0;
+}
+
+#im79, #im85 {
+	background-image: url(../images/natalie-portman_2.jpg);
+	opacity: 0;
+}
+
+
+/* ---------------------------------- */
+/* ------ r a f a e l l i n i ------- */
+/* ---------------------------------- */
