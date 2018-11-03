@@ -1,31 +1,48 @@
 <?php
-// formularios_21.php
-// viene de formularios_2.php
-// recibe la variable autor
+// formularios_31.php
+// viene de formularios_3.php
+// recibe las variables nombre, apellidos, alias, nacionalidad, nacimiento y deceso
 
-$autor = $_POST["autor"];
+$nombre = $_POST["nombre"];
+$apellidos = $_POST["apellidos"];
+$alias = $_POST["alias"];
+$nacionalidad = $_POST["nacionalidad"];
+$nacimiento = $_POST["nacimiento"];
+$deceso = $_POST["deceso"];
 
-echo "El autor es " . $autor;
+//echo "El autor es " . $nombre . " ";
+//echo $apellidos . " , alias " .$alias. ", ";
+//echo "nacido en " .$nacionalidad. " el " .$nacimiento. " ";
+//echo "y fallecido el " .$deceso. " ";
 
-
+//Variable de control 
+//$N=0 No se inserta registro
+//$N=1 Se inserta un registro
+$N = 0; 
 
 $db = new SQLite3('biblioteca.sqlite');
 
+if (!empty($nombre) && !empty($apellidos)) {
+
+    //echo "Esta variable  no está vacía";
+    
+    $registro  = "INSERT INTO autores VALUES (NULL, '" .$nombre. "', '" .$apellidos. "', ";
+    if (!empty($alias)){$registro.= "'".$alias."', ";}else{$registro.= "NULL, ";}
+    if (!empty($nacionalidad)){$registro.= "'".$nacionalidad."', ";}else{$registro.= "NULL, ";}
+    if (!empty($nacimiento)){$registro.= "'".$nacimiento."', ";}else{$registro.= "NULL, ";}
+    if (!empty($deceso)){$registro.= "'".$deceso."') ";}else{$registro.= "NULL )";}
+    
+    //echo $registro;
+
+    $db->query($registro);
+    $N = 1;
+    
+  }
+
+  // ejecución de la consulta de la tabla autores                                                         
+$result = $db->query( "SELECT * FROM autores" ); 
 
 
-// Cosulta en la tabla libros
-
-$consulta2 = "SELECT TITULO, ";
-$consulta2 .= "SUBTITULO, SERIE, N_SERIE  ";
-$consulta2 .= "FROM libros WHERE AUTOR_NOMBRE LIKE '%" . $autor . "%' ";
-$consulta2 .= "OR AUTOR_APELLIDOS LIKE '%" . $autor . "%' ";
-$consulta2 .= "ORDER BY ID_LIBROS";
-$resultado2 = $db->query( $consulta2 );
-
-
-
-                                                                                                 
- 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -37,7 +54,7 @@ $resultado2 = $db->query( $consulta2 );
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="images/favicon.ico">
-  <title>Formularios Dos</title>
+  <title>Formularios Tres</title>
   
   <!-- Bootstrap core CSS -->
   <!--<link href="//netdna.bootstrapcdn.com/bootstrap/2.1.0/css/bootstrap.min.css" rel="stylesheet">-->
@@ -104,9 +121,9 @@ $resultado2 = $db->query( $consulta2 );
            <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li class="active"><a href="formularios.html">Formularios Uno</a></li>
+            <li><a href="formularios.html">Formularios Uno</a></li>
             <li><a href="formularios_2.html">Formularios Dos</a></li>
-            <li><a href="formularios_3.html">Formularios Tres</a></li>
+            <li class="active"><a href="formularios_3.html">Formularios Tres</a></li>
             <li><a href="formularios_4.html">Formularios Cuatro</a></li>
           </ul>
         </div>
@@ -132,62 +149,67 @@ $resultado2 = $db->query( $consulta2 );
       <p class="lead">Voy a jugar un poco con la rejilla</p>
     </div>
 
-    <h1>Formularios Dos</h1>
-    <h2>El autor es <?php echo $autor ?></h2>
-    <br><br>
-    <form role="form" action="formularios_21.php" method="post">
+    <h1>Formularios Tres</h1>
     
+    <br><br>
+
+    <?php
+    if ($N == 0) {
+      echo "<h3>No se ha insertado ningun registro</h3>";
+    } else {
+      echo "<h3>El registro se ha insertado correctamente</h3>";
+    }
+
+    ?>
+    <h2>Tabla Autores</h2>
+
     <div class="table-responsive">
       <table class="table table-striped">
         <tr>
-          <th>Título</th>
-          <th>Subtítulo</th>
-          <th>Serie</th>
-          <th>Nº Serie</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Alias</th>
+          <th>Nacionalidad</th>
+          <th>Nacido el</th>
+          <th>Fallecido el</th>
         </tr>
+
 
 <?php 
 
-while ( $vector2 = $resultado2->fetchArray() ) {
+while ($row = $result->fetchArray()) {
+  echo "<tr><td>";
 
-    echo "<tr>";
-    echo "<td>" .$vector2[0]. "</td>";
-    echo "<td>" .$vector2[1]. "</td>";
-    echo "<td>" .$vector2[2]. "</td>";
-    echo "<td>" .$vector2[3]. "</td>";
-    echo "</tr>";
+  echo $row["NOMBRE"]."</td><td>";
+  echo $row["APELLIDOS"]."</td><td>";
+  echo $row["ALIAS"]."</td><td>";
+  echo $row["NACIONALIDAD"]."</td><td>";
+  echo $row["NACIMIENTO"]."</td><td>";
+  echo $row["MUERTE"];
+ 
+  echo "</td></tr>";
+} 
 
-}
+
+?>        
+      </table>
+    </div>
+
+    <button type="button" class="btn btn-default" OnClick="abre('formularios_3.html')">Volver</button>
+    
+<?php 
 
 // Se cierra la conexión a la base de datos
 
 $db->close();
 ?>
 
-      </table>
-    </div>
-    </form>
-  
-
-    <button type="button" class="btn btn-default" OnClick="abre('formularios_2.html')">Volver</button>
+    
 
 
  <br><br><br><br> <br><br><br><br> <br><br><br><br>
 
       
-        
-      
-
-
-
-
-
-    
-
-   
-
-
-
 
 
   </div>

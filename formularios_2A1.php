@@ -1,5 +1,11 @@
 <?php
-// TABLA autores  C R E A R
+// formularios_2A1.php
+// viene de formularios_2A.php
+// recibe la variable autor
+
+$autor = $_POST["autor"];
+
+//echo "El autor es " . $autor;
 
 
 
@@ -7,29 +13,26 @@ $db = new SQLite3('biblioteca.sqlite');
 
 
 
-// crear la tabla autores
-$db->query( "DROP TABLE autores" );
-$v  = " CREATE TABLE autores (          ";
-$v .= "	ID_AUTORES INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,	";
-$v .= " NOMBRE     		VARCHAR NOT NULL ,  	"; 
-$v .= " APELLIDOS   	VARCHAR NOT NULL ,      "; 
-$v .= " ALIAS  			VARCHAR ,           	"; 
-$v .= " NACIONALIDAD  	VARCHAR ,            		";
-$v .= " NACIMIENTO  	FECHA DATETIME ,          ";
-$v .= " MUERTE  		FECHA DATETIME          ";  
+// Cosulta en la tabla libros
 
-$v .= " ) ";
+$consulta2 = "SELECT TITULO, ";
+$consulta2 .= "SUBTITULO, SERIE, N_SERIE,  ";
+$consulta2 .= "AUTOR_NOMBRE, AUTOR_APELLIDOS  ";
+$consulta2 .= "FROM libros WHERE AUTOR_NOMBRE LIKE '%" . $autor . "%' ";
+$consulta2 .= "OR AUTOR_APELLIDOS LIKE '%" . $autor . "%' ";
+$consulta2 .= "ORDER BY ID_LIBROS";
+$resultado2 = $db->query( $consulta2 );
+while ( $vector2 = $resultado2->fetchArray() ) {
+  $nombre = $vector2[4]." ".$vector2[5];
+}
 
-$db->query( $v );
+//Si el autor no tiene ningún libro
+if(empty($nombre)){$nombre="";}
 
-// inserción de registros 
 
-$db->query( " INSERT INTO autores VALUES(NULL, 'Ernest', 'Cline', NULL, 'Estados Unidos', '1972-03-22',NULL)       	");
-$db->query( " INSERT INTO autores VALUES(NULL, 'Philip K.', 'Dick', NULL, 'Estados Unidos', '1928-12-16', '1982-03-02')  ");
-$db->query( " INSERT INTO autores VALUES(NULL, 'Lindsey', 'Davis', NULL, 'Reino Unido', '1949-08-21', NULL)       		");
-$db->query( " INSERT INTO autores VALUES(NULL, 'Honoré', 'de Balzac', NULL, 'Francia', '1799-05-20', '1850-08-18')       ");
-$db->query( " INSERT INTO autores VALUES(NULL, 'Jim', 'Grant', 'Lee Child', 'Reino Unido', '1954-10-24', NULL)       ");
-                                                                                               
+
+                                                                                                 
+ 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -41,7 +44,7 @@ $db->query( " INSERT INTO autores VALUES(NULL, 'Jim', 'Grant', 'Lee Child', 'Rei
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="images/favicon.ico">
-  <title>Formularios Uno</title>
+  <title>Formularios Dos</title>
   
   <!-- Bootstrap core CSS -->
   <!--<link href="//netdna.bootstrapcdn.com/bootstrap/2.1.0/css/bootstrap.min.css" rel="stylesheet">-->
@@ -136,44 +139,51 @@ $db->query( " INSERT INTO autores VALUES(NULL, 'Jim', 'Grant', 'Lee Child', 'Rei
       <p class="lead">Voy a jugar un poco con la rejilla</p>
     </div>
 
-    <h1>Formularios Uno</h1>
-    <h2>Tabla Autores Creada</h2>
+    <h1>Formularios Dos</h1>
+    <h4>Libros escritos por <?php echo $nombre ?></h4>
+    <br><br>
+    <form role="form" action="formularios_21.php" method="post">
+    
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <tr>
+          <th>Título</th>
+          <th>Subtítulo</th>
+          <th>Serie</th>
+          <th>Nº Serie</th>
+        </tr>
 
- <?php                                                                                                     
-// ejecución de consulta de autores                                                                 
-$result = $db->query( "SELECT * FROM autores" );                                              
-                                                                                                     
-// muestra de los resultados con un bucle
-echo "<h4 class='text-center'>Tabla de Autores</h4>";
-echo "<br>";
-echo "<div class='table-responsive'>";
-echo "<table class='table table-striped table-condensed'>";
-echo "<tr><th>Nombre</th><th>Apellidos</th><th>Alias</th><th>Nacionalidad</th>";
-echo "<th>Nacimiento</th><th>Fallecimiento</th></tr>";
+<?php 
 
-while ($row = $result->fetchArray()) { 
-echo "<tr><td>";
- echo $row["NOMBRE"]."</td><td>";
- echo $row["APELLIDOS"]."</td><td>";
- echo $row["ALIAS"]."</td><td>";
- echo $row["NACIONALIDAD"]."</td><td>";
- echo $row["NACIMIENTO"]."</td><td>";
- echo $row["MUERTE"];
- 
-echo "</td></tr>";
+while ( $vector2 = $resultado2->fetchArray() ) {
+
+    echo "<tr>";
+    echo "<td>" .$vector2[0]. "</td>";
+    echo "<td>" .$vector2[1]. "</td>";
+    echo "<td>" .$vector2[2]. "</td>";
+    echo "<td>" .$vector2[3]. "</td>";
+    echo "</tr>";
+
 }
-echo "</table>";
-echo "</div>";
 
-// se cierra la conexión a la base de datos 
+// Se cierra la conexión a la base de datos
+
 $db->close();
 ?>
 
-<button type="button" class="btn btn-default" OnClick="abre('formularios.html')">Volver</button>
+      </table>
+    </div>
+    </form>
+  
+
+    <button type="button" class="btn btn-default" OnClick="abre('formularios_2.html')">Volver</button>
+
 
  <br><br><br><br> <br><br><br><br> <br><br><br><br>
 
-
+      
+        
+      
 
 
 

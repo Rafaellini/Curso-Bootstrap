@@ -30,8 +30,9 @@ function cierra(x){
 	enlace.style.visibility = "hidden";
 }
 
-function enviar() {
-	
+function enviar(autor) {
+
+	document.forms[0].autor.value = autor;
 	document.forms[0].submit();
 }
 

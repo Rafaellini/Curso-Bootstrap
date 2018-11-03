@@ -79,6 +79,10 @@
 	height: 300px;
 }
 
+.red {
+	color: red;
+}
+
 #pepe{
 	transition-property: visibility;
 	transition-duration: 1s;

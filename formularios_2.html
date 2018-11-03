@@ -105,45 +105,72 @@
 
     <h1>Formularios Dos</h1>
 
-    <h2>Formulario Básico</h2>
+    <h2>Formulario básico</h2>
 
     
-    <form role="form" action="formularios_2.php" method="post">
+    <form role="form" action="formularios_2A.php" method="post">
       <div class="row">
       
-        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="form-group col-xs-8 col-sm-4">
           <label for="autor">Autor</label>
           <input type="text" id="autor" name="autor">
         </div>
-
-        <button type="submit" class="btn btn-default">Envíar</button>
-      
+        <div class="col-xs-offsset-1 col-xs-2">
+          <button type="submit" class="btn btn-default">Enviar</button>
+        </div>
       </div>
     </form>
+    <br>
+    <code>&#60;div class="form-group"&#62;&#60;label for="autor"&#62;&#60;input type="text" id="autor" name="autor"&#62;</code>
+    <hr>
+    <br>
+
+    <h2>Formulario en línea</h2>
+
+    
+    <form role="form" class="form-inline" action="formularios_2B.php" method="post">
+      
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input type="text" id="titulo" name="titulo">
+        </div>
+          <button type="submit" class="btn btn-default">Enviar</button>
+        
+    </form>
+    <br>
+    <code>&#60;form class="form-inline"&#62;&#60;div class="form-group"&#62;&#60;label for="titulo"&#62;&#60;input type="text" id="titulo" name="titulo"&#62;</code>
+    <hr>
+    <br>
+
+    <h2>Formulario horizontal</h2>
+
+    
+    <form role="form" class="form-horizontal" action="formularios_2C.php" method="post">
+      
+
+        <div class="form-group">
+          <label for="autor2" class="col-xs-4">Autor</label>
+          <input type="text" class="col-xs-offset-1 col-xs-6" id="autor2" name="autor2">
+        </div>
+
+        <div class="form-group">
+          <label for="nacionalidad" class="col-xs-4">Nacionalidad</label>
+          <input type="text" class="col-xs-offset-1 col-xs-6" id="nacionalidad" name="nacionalidad">
+        </div>
+
+        <div class="form-group">
+          <label for="titulo2" class="col-xs-4">Título</label>
+          <input type="text" class="col-xs-offset-1 col-xs-6" id="titulo2" name="titulo2">
+        </div>
+          <button type="submit" class="btn btn-default">Enviar</button>
+        
+    </form>
+    <br>
+    <code>&#60;form class="form-horizontal"&#62;&#60;div class="form-group"&#62;&#60;label for="titulo"&#62;&#60;input type="text" id="titulo" name="titulo"&#62;</code>
  
 
-    
 
-
-
-   
-
-   
-    
-
-    
     <br><br><br><br> <br><br><br><br> <br><br><br><br>
-
-
-
-
-
-
-
-    
-
-   
-
 
 
 

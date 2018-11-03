@@ -1,37 +1,26 @@
 <?php
-// TABLA autores  C R E A R
+// formularios_3.php
+// viene de formularios_3.html
+// recibe las variables nombre, apellidos, alias, nacionalidad, nacimiento y deceso
 
+$nombre = $_POST["nombre"];
+$apellidos = $_POST["apellidos"];
+$alias = $_POST["alias"];
+$nacionalidad = $_POST["nacionalidad"];
+$nacimiento = $_POST["nacimiento"];
+$deceso = $_POST["deceso"];
+
+//echo "El autor es " . $nombre . " ";
+//echo $apellidos . " , alias " .$alias. ", ";
+//echo "nacido en " .$nacionalidad. " el " .$nacimiento. " ";
+//echo "y fallecido el " .$deceso. " ";
 
 
 $db = new SQLite3('biblioteca.sqlite');
 
 
-
-// crear la tabla autores
-$db->query( "DROP TABLE autores" );
-$v  = " CREATE TABLE autores (          ";
-$v .= "	ID_AUTORES INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,	";
-$v .= " NOMBRE     		VARCHAR NOT NULL ,  	"; 
-$v .= " APELLIDOS   	VARCHAR NOT NULL ,      "; 
-$v .= " ALIAS  			VARCHAR ,           	"; 
-$v .= " NACIONALIDAD  	VARCHAR ,            		";
-$v .= " NACIMIENTO  	FECHA DATETIME ,          ";
-$v .= " MUERTE  		FECHA DATETIME          ";  
-
-$v .= " ) ";
-
-$db->query( $v );
-
-// inserción de registros 
-
-$db->query( " INSERT INTO autores VALUES(NULL, 'Ernest', 'Cline', NULL, 'Estados Unidos', '1972-03-22',NULL)       	");
-$db->query( " INSERT INTO autores VALUES(NULL, 'Philip K.', 'Dick', NULL, 'Estados Unidos', '1928-12-16', '1982-03-02')  ");
-$db->query( " INSERT INTO autores VALUES(NULL, 'Lindsey', 'Davis', NULL, 'Reino Unido', '1949-08-21', NULL)       		");
-$db->query( " INSERT INTO autores VALUES(NULL, 'Honoré', 'de Balzac', NULL, 'Francia', '1799-05-20', '1850-08-18')       ");
-$db->query( " INSERT INTO autores VALUES(NULL, 'Jim', 'Grant', 'Lee Child', 'Reino Unido', '1954-10-24', NULL)       ");
-                                                                                               
 ?>
-<!DOCTYPE html>
+<!DOCTYPE htm
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -41,7 +30,7 @@ $db->query( " INSERT INTO autores VALUES(NULL, 'Jim', 'Grant', 'Lee Child', 'Rei
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="images/favicon.ico">
-  <title>Formularios Uno</title>
+  <title>Formularios Tres</title>
   
   <!-- Bootstrap core CSS -->
   <!--<link href="//netdna.bootstrapcdn.com/bootstrap/2.1.0/css/bootstrap.min.css" rel="stylesheet">-->
@@ -108,9 +97,9 @@ $db->query( " INSERT INTO autores VALUES(NULL, 'Jim', 'Grant', 'Lee Child', 'Rei
            <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li class="active"><a href="formularios.html">Formularios Uno</a></li>
+            <li><a href="formularios.html">Formularios Uno</a></li>
             <li><a href="formularios_2.html">Formularios Dos</a></li>
-            <li><a href="formularios_3.html">Formularios Tres</a></li>
+            <li class="active"><a href="formularios_3.html">Formularios Tres</a></li>
             <li><a href="formularios_4.html">Formularios Cuatro</a></li>
           </ul>
         </div>
@@ -136,55 +125,84 @@ $db->query( " INSERT INTO autores VALUES(NULL, 'Jim', 'Grant', 'Lee Child', 'Rei
       <p class="lead">Voy a jugar un poco con la rejilla</p>
     </div>
 
-    <h1>Formularios Uno</h1>
-    <h2>Tabla Autores Creada</h2>
+    <h1>Formularios Tres</h1>
+    
+    <br><br>
+    <h2>Tabla Autores</h2>
+    <h3>Insertar Registro</h3>
 
- <?php                                                                                                     
-// ejecución de consulta de autores                                                                 
-$result = $db->query( "SELECT * FROM autores" );                                              
-                                                                                                     
-// muestra de los resultados con un bucle
-echo "<h4 class='text-center'>Tabla de Autores</h4>";
-echo "<br>";
-echo "<div class='table-responsive'>";
-echo "<table class='table table-striped table-condensed'>";
-echo "<tr><th>Nombre</th><th>Apellidos</th><th>Alias</th><th>Nacionalidad</th>";
-echo "<th>Nacimiento</th><th>Fallecimiento</th></tr>";
+    <form role="form" class="form-horizontal" action="formularios_31.php" method="post">
+      <div class="form-group">
+        <label for="nombre" class="col-xs-4 col-lg-2">Nombre</label>
+        <input type="text" class="col-xs-offset-1 col-xs-6 col-lg-3" id="nombre" name="nombre" value="<?php echo $nombre ?>" readonly="readonly" >
+      </div>
 
-while ($row = $result->fetchArray()) { 
-echo "<tr><td>";
- echo $row["NOMBRE"]."</td><td>";
- echo $row["APELLIDOS"]."</td><td>";
- echo $row["ALIAS"]."</td><td>";
- echo $row["NACIONALIDAD"]."</td><td>";
- echo $row["NACIMIENTO"]."</td><td>";
- echo $row["MUERTE"];
+      <?php 
+
+      if (empty($nombre)) {
+        echo "<div class='red'>";
+        echo "<h5>El campo nombre no puede estar vacío</h5>";
+        echo "<h5>Vuelva atrás y rellene este campo. Gracias</h5>";
+        echo "</div>";
+      }
+
+      ?>
+
+      <div class="form-group">
+        <label for="apellidos" class="col-xs-4 col-lg-2">Apellidos</label>
+        <input type="text" class="col-xs-offset-1 col-xs-6 col-lg-3" id="apellidos" name="apellidos" value="<?php echo $apellidos ?>" readonly="readonly" >
+      </div>
+
+      <?php 
+
+      if (empty($apellidos)) {
+        echo "<div class='red'>";
+        echo "<h5>El campo apellidos no puede estar vacío</h5>";
+        echo "<h5>Vuelva atrás y rellene este campo. Gracias</h5>";
+        echo "</div>";
+      }
+
+      ?>
+
+      <div class="form-group">
+        <label for="alias" class="col-xs-4 col-lg-2">Alias</label>
+        <input type="text" class="col-xs-offset-1 col-xs-6 col-lg-3" id="alias" name="alias"
+        value="<?php echo $alias ?>" readonly="readonly">
+      </div>
+
+      <div class="form-group">
+        <label for="nacionalidad" class="col-xs-4 col-lg-2">Nacionalidad</label>
+        <input type="text" class="col-xs-offset-1 col-xs-6 col-lg-3" id="nacionalidad" name="nacionalidad" value="<?php echo $nacionalidad ?>" readonly="readonly">
+      </div>
+
+      <div class="form-group">
+        <label for="nacimiento" class="col-xs-4 col-lg-2">Fecha de Nacimiento</label>
+        <input type="date" class="col-xs-offset-1 col-xs-6 col-lg-3" id="nacimiento" name="nacimiento" value="<?php echo $nacimiento ?>" readonly="readonly">
+      </div>
+
+      <div class="form-group">
+        <label for="deceso" class="col-xs-4 col-lg-2">Fecha de fallecimieno</label>
+        <input type="date" class="col-xs-offset-1 col-xs-6 col-lg-3" id="deceso" name="deceso" value="<?php echo $deceso ?>" readonly="readonly">
+      </div>
+
+      <button type="submit" class="btn btn-default">Enviar</button>
+      <button type="button" class="btn btn-default" onClick="history.go(-1); return false;">Atrás</button>
+    </form>
+
  
-echo "</td></tr>";
-}
-echo "</table>";
-echo "</div>";
+<?php 
 
-// se cierra la conexión a la base de datos 
+// Se cierra la conexión a la base de datos
+
 $db->close();
 ?>
 
-<button type="button" class="btn btn-default" OnClick="abre('formularios.html')">Volver</button>
+    
+
 
  <br><br><br><br> <br><br><br><br> <br><br><br><br>
 
-
-
-
-
-
-
-    
-
-   
-
-
-
+      
 
 
   </div>
